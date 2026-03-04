@@ -21,7 +21,11 @@ Source/
 ├── TwoSum.java               # Two Sum Problem
 ├── MergeSortedLists.java     # Merge Two Sorted Lists (Linked List)
 ├── BinaryTreeTraversal.java  # In-order, Pre-order, Post-order Traversals
-└── README.md                 # Project Documentation
+├── MergeSort.java            # Merge Sort Implementation
+├── LinkedList.java           # Linked List with Add/Remove Operations
+├── DijkstraAlgorithm.java    # Dijkstra's Shortest Path Algorithm
+├── QueueUsingStacks.java     # Queue Implementation using Two Stacks
+└── HeapSort.java             # Heap Sort Implementation
 lib/                         # External Libraries
 .git/                        # Git Repository
 ```
@@ -101,6 +105,65 @@ lib/                         # External Libraries
   - Inorder: `4 2 5 1 3 6`
   - Postorder: `4 5 2 6 3 1`
 
+### 10. **Merge Sort** (`MergeSort.java`)
+- **Description**: A divide-and-conquer sorting algorithm that divides the array into halves, recursively sorts them, and merges the sorted subarrays.
+- **Time Complexity**: O(n log n) in all cases
+- **Space Complexity**: O(n)
+- **Key Concept**: Stable sorting algorithm, efficient for large datasets
+- **Algorithm Steps**:
+  1. Divide the array into two halves
+  2. Recursively sort both halves
+  3. Merge the sorted halves
+- **Example**: `[64, 34, 25, 12, 22, 11, 90]` → `[11, 12, 22, 25, 34, 64, 90]`
+
+### 11. **Linked List** (`LinkedList.java`)
+- **Description**: Implementation of a singly linked list with add and remove node operations.
+- **Key Operations**:
+  - `addNode(int data)` - Add node at the end (O(n))
+  - `addNodeAtBeginning(int data)` - Add node at the beginning (O(1))
+  - `addNodeAtPosition(int data, int position)` - Add node at specific position (O(n))
+  - `removeNode(int data)` - Remove node by value (O(n))
+  - `removeNodeAtPosition(int position)` - Remove node at specific position (O(n))
+- **Example**: Create a list, add/remove nodes, and display the linked list
+- **Use Case**: Foundation for tree and graph data structures
+
+### 12. **Dijkstra's Algorithm** (`DijkstraAlgorithm.java`)
+- **Description**: Finds the shortest path from a source vertex to all other vertices in a weighted graph with non-negative edge weights.
+- **Time Complexity**: O((V + E) log V) using priority queue
+- **Space Complexity**: O(V)
+- **Key Concept**: Greedy algorithm using priority queue (min-heap)
+- **Algorithm Steps**:
+  1. Initialize distances to infinity except source (0)
+  2. Use a priority queue to process vertices in order of distance
+  3. For each vertex, update distances to adjacent vertices (relaxation)
+  4. Mark vertices as visited to avoid reprocessing
+- **Example Graph**: 6 vertices with weighted edges finding shortest paths from vertex 0
+- **Output**: Shortest distances from source to all reachable vertices
+
+### 13. **Queue Using Two Stacks** (`QueueUsingStacks.java`)
+- **Description**: Implementation of a queue (FIFO) data structure using two stacks.
+- **Key Operations**:
+  - `enqueue(int value)` - Add element to rear (O(1))
+  - `dequeue()` - Remove and return front element (Amortized O(1))
+  - `peek()` - View front element without removal (Amortized O(1))
+  - `isEmpty()` - Check if queue is empty (O(1))
+- **Time Complexity**: Amortized O(1) for all operations
+- **Key Concept**: Uses stack1 for enqueue and stack2 for dequeue, with lazy element transfer
+- **Example Operations**: Enqueue elements, peek at front, dequeue, and test edge cases
+
+### 14. **Heap Sort** (`HeapSort.java`)
+- **Description**: Comparison-based sorting algorithm based on the binary heap data structure.
+- **Time Complexity**: O(n log n) in all cases
+- **Space Complexity**: O(1) - in-place sorting
+- **Key Concept**: Builds a max heap and repeatedly extracts the maximum element
+- **Algorithm Steps**:
+  1. Build a max heap from the input array
+  2. Extract maximum element and place it at the end
+  3. Reduce heap size and repeat heapification
+- **Advantages**: O(n log n) guaranteed time complexity, in-place, no extra space
+- **Disadvantage**: Unstable sorting algorithm
+- **Example**: `[64, 34, 25, 12, 22, 11, 90, 88]` → `[11, 12, 22, 25, 34, 64, 88, 90]`
+
 ## How to Run
 
 Each Java file contains a `main` method and can be run independently:
@@ -118,11 +181,11 @@ java -cp . Source.BubbleSort
 
 ## Topics Covered
 
-- **Sorting**: Bubble Sort, Insertion Sort
-- **Searching**: Binary Search
+- **Sorting**: Bubble Sort, Insertion Sort, Merge Sort, Heap Sort
+- **Searching**: Binary Search, Dijkstra's Algorithm
 - **String Manipulation**: String Reversal, Length of Last Word
 - **Problem Solving**: Two Sum Problem
-- **Data Structures**: Arrays, HashMap
+- **Data Structures**: Arrays, HashMap, Linked List, Queue, Stack, Binary Tree, Weighted Graph, Heap
 
 ## License
 
